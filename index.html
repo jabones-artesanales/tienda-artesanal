@@ -3,138 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artesanías Naturales</title>
+
+<title>CR Artesanales</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f4f4f4;
+    background:#faf7f2;
+    color:#333;
 }
 
 header{
-background:#2E7D32;
-color:white;
-padding:20px;
-text-align:center;
+    background:#7b4b2a;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1{
+    font-size:35px;
+}
+
+header p{
+    margin-top:10px;
 }
 
 nav{
-background:#1B5E20;
-padding:15px;
-text-align:center;
+    background:white;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    box-shadow:0 2px 8px #ddd;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:15px;
-font-weight:bold;
+    text-decoration:none;
+    color:#7b4b2a;
+    font-weight:bold;
 }
 
 .hero{
-padding:60px;
-text-align:center;
-background:#A5D6A7;
+    padding:40px 20px;
+    text-align:center;
 }
 
-.productos{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-padding:30px;
+.hero h2{
+    font-size:30px;
+    color:#7b4b2a;
 }
 
-.producto{
-background:white;
-padding:20px;
-width:250px;
-border-radius:15px;
-box-shadow:0 0 10px gray;
-text-align:center;
+.hero p{
+    margin-top:15px;
+    font-size:18px;
 }
 
-button{
-background:#2E7D32;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:10px;
-cursor:pointer;
+.boton{
+    display:inline-block;
+    margin-top:25px;
+    background:#7b4b2a;
+    color:white;
+    padding:12px 25px;
+    border-radius:25px;
+    text-decoration:none;
+}
+
+.categorias{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:20px;
+}
+
+.categoria{
+    background:white;
+    padding:15px 25px;
+    border-radius:20px;
+    box-shadow:0 3px 10px #ddd;
 }
 
 footer{
-background:#1B5E20;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+    margin-top:40px;
+    background:#7b4b2a;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:30px;
-text-decoration:none;
-}
 </style>
 
 </head>
+
 <body>
 
 <header>
-<h1>🌿 Artesanías Naturales</h1>
-<p>Jabones, ungüentos y geles artesanales</p>
+<h1>CR Artesanales</h1>
+<p>Productos naturales para el cuidado personal 🌿</p>
 </header>
+
 
 <nav>
 <a href="#">Inicio</a>
-<a href="#">Productos</a>
-<a href="#">Contacto</a>
+<a href="#productos">Productos</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
+
 <section class="hero">
-<h2>Cuida tu piel con ingredientes naturales</h2>
-<p>Envíos a todo Tlaxcala 🚚</p>
-</section>
 
-<section class="productos">
+<h2>Cuida tu piel con productos artesanales</h2>
 
-<div class="producto">
-<h2>🧼 Jabón Artesanal</h2>
-<p>$50 MXN</p>
-<button>Agregar al carrito</button>
-</div>
+<p>
+Bálsamos hidratantes, jabones, champú, acondicionador y sales de baño elaborados con ingredientes seleccionados.
+</p>
 
-<div class="producto">
-<h2>🐋 balsamo hidratante</h2>
-<p>$70 MXN</p>
-<button>Agregar al carrito</button>
-</div>
-
-<div class="producto">
-<h2>❄️ Gel de Mentol</h2>
-<p>$70 MXN</p>
-<button>Agregar al carrito</button>
-</div>
+<a class="boton" href="#productos">
+Ver productos
+</a>
 
 </section>
 
-<footer>
 
-<h3>📞 WhatsApp: 220 500 36 22</h3>
+<section class="categorias">
 
-<p>🚚 Envíos a todo Tlaxcala</p>
+<div class="categoria">
+🧼 Jabones
+</div>
+
+<div class="categoria">
+🌿 Bálsamos
+</div>
+
+<div class="categoria">
+🧴 Champú
+</div>
+
+<div class="categoria">
+✨ Sales de baño
+</div>
+
+</section>
+
+
+<section id="productos">
+
+</section>
+
+
+<footer id="contacto">
+
+<p>Envíos en todo Tlaxcala 🚚</p>
+<p>Pedidos por WhatsApp 📲</p>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/522205003622">💬</a>
 
 </body>
 </html>
