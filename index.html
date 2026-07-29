@@ -7,95 +7,171 @@
 <title>CR Artesanales</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Arial',sans-serif;
 }
 
 body{
-    background:#faf7f2;
-    color:#333;
+background:#faf7f2;
+color:#333;
 }
 
 header{
-    background:#7b4b2a;
-    color:white;
-    padding:25px;
-    text-align:center;
+background:#6b4226;
+color:white;
+padding:30px;
+text-align:center;
 }
 
 header h1{
-    font-size:35px;
+font-size:38px;
 }
 
 header p{
-    margin-top:10px;
+margin-top:10px;
 }
 
+
 nav{
-    background:white;
-    padding:15px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    box-shadow:0 2px 8px #ddd;
+background:white;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+box-shadow:0 3px 10px #ddd;
 }
 
 nav a{
-    text-decoration:none;
-    color:#7b4b2a;
-    font-weight:bold;
+text-decoration:none;
+color:#6b4226;
+font-weight:bold;
 }
+
 
 .hero{
-    padding:40px 20px;
-    text-align:center;
+text-align:center;
+padding:45px 20px;
 }
+
 
 .hero h2{
-    font-size:30px;
-    color:#7b4b2a;
+font-size:32px;
+color:#6b4226;
 }
+
 
 .hero p{
-    margin-top:15px;
-    font-size:18px;
+margin-top:15px;
+font-size:18px;
 }
+
 
 .boton{
-    display:inline-block;
-    margin-top:25px;
-    background:#7b4b2a;
-    color:white;
-    padding:12px 25px;
-    border-radius:25px;
-    text-decoration:none;
+display:inline-block;
+background:#6b4226;
+color:white;
+padding:14px 25px;
+border-radius:30px;
+text-decoration:none;
+margin-top:20px;
 }
+
 
 .categorias{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    padding:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+padding:20px;
 }
+
 
 .categoria{
-    background:white;
-    padding:15px 25px;
-    border-radius:20px;
-    box-shadow:0 3px 10px #ddd;
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 4px 10px #ddd;
+font-weight:bold;
 }
 
-footer{
-    margin-top:40px;
-    background:#7b4b2a;
-    color:white;
-    text-align:center;
-    padding:20px;
+
+#productos{
+padding:30px;
 }
+
+
+.titulo{
+text-align:center;
+color:#6b4226;
+margin-bottom:25px;
+}
+
+
+.contenedor-productos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+
+.producto{
+background:white;
+width:280px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 15px #ddd;
+text-align:center;
+}
+
+
+.producto img{
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:15px;
+}
+
+
+.producto h3{
+color:#6b4226;
+margin:15px;
+}
+
+
+.producto p{
+margin:8px;
+}
+
+
+.precio{
+font-size:20px;
+font-weight:bold;
+color:#198754;
+}
+
+
+.carrito{
+background:white;
+margin:30px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 15px #ddd;
+}
+
+
+footer{
+background:#6b4226;
+color:white;
+padding:25px;
+text-align:center;
+margin-top:40px;
+}
+
 
 </style>
 
@@ -103,67 +179,345 @@ footer{
 
 <body>
 
+
 <header>
-<h1>CR Artesanales</h1>
-<p>Productos naturales para el cuidado personal 🌿</p>
+
+<h1>CR Artesanales 🌿</h1>
+
+<p>Productos naturales para el cuidado personal</p>
+
 </header>
 
 
 <nav>
+
 <a href="#">Inicio</a>
+
 <a href="#productos">Productos</a>
+
 <a href="#contacto">Contacto</a>
+
 </nav>
 
 
 <section class="hero">
 
-<h2>Cuida tu piel con productos artesanales</h2>
+<h2>Cuida tu piel de forma natural</h2>
 
 <p>
-Bálsamos hidratantes, jabones, champú, acondicionador y sales de baño elaborados con ingredientes seleccionados.
+Jabones artesanales, bálsamos hidratantes,
+champú y sales de baño elaborados con ingredientes seleccionados.
 </p>
+
 
 <a class="boton" href="#productos">
 Ver productos
 </a>
 
+
 </section>
+
 
 
 <section class="categorias">
 
-<div class="categoria">
-🧼 Jabones
+<div class="categoria">🧼 Jabones</div>
+
+<div class="categoria">🌿 Bálsamos</div>
+
+<div class="categoria">🧴 Champú</div>
+
+<div class="categoria">✨ Sales de baño</div>
+
+</section>
+    <section id="productos">
+
+<h2 class="titulo">Nuestros productos 🛒</h2>
+
+
+<div class="contenedor-productos">
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/150">
+
+<h3>🧼 Jabón Artesanal</h3>
+
+<p>
+Jabón natural elaborado artesanalmente para el cuidado diario de la piel.
+</p>
+
+<p>
+🌿 Ingredientes: aceites naturales, extractos vegetales y esencias.
+</p>
+
+<p>
+⚖️ Contenido: 100 g
+</p>
+
+<p class="precio">
+$50 MXN
+</p>
+
+<a class="boton" 
+href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20jabón%20artesanal">
+Comprar
+</a>
+
 </div>
 
-<div class="categoria">
-🌿 Bálsamos
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/150">
+
+<h3>🌿 Bálsamo Hidratante</h3>
+
+<p>
+Ayuda a mantener la piel suave e hidratada con una textura agradable.
+</p>
+
+<p>
+🌿 Ingredientes: mantecas naturales, aceites y activos hidratantes.
+</p>
+
+<p>
+⚖️ Contenido: 60 g
+</p>
+
+<p class="precio">
+$80 MXN
+</p>
+
+<a class="boton" 
+href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20bálsamo%20hidratante">
+Comprar
+</a>
+
 </div>
 
-<div class="categoria">
-🧴 Champú
+
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/150">
+
+<h3>🧴 Champú Artesanal</h3>
+
+<p>
+Limpieza suave para cuidar tu cabello todos los días.
+</p>
+
+<p>
+🌿 Ingredientes: extractos naturales y componentes nutritivos.
+</p>
+
+<p>
+⚖️ Contenido: 250 ml
+</p>
+
+<p class="precio">
+$120 MXN
+</p>
+
+<a class="boton" 
+href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20champú%20artesanal">
+Comprar
+</a>
+
 </div>
 
-<div class="categoria">
-✨ Sales de baño
+
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/150">
+
+<h3>✨ Sales de Baño</h3>
+
+<p>
+Perfectas para un momento de relajación y cuidado personal.
+</p>
+
+<p>
+🌿 Ingredientes: sales minerales, aromas y extractos naturales.
+</p>
+
+<p>
+⚖️ Contenido: 500 g
+</p>
+
+<p class="precio">
+$100 MXN
+</p>
+
+<a class="boton" 
+href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20sales%20de%20baño">
+Comprar
+</a>
+
+</div>
+
+
 </div>
 
 </section>
 
 
-<section id="productos">
+
+<section class="carrito">
+
+<h2 class="titulo">🛒 Carrito</h2>
+
+<p>
+Tu carrito aparecerá aquí próximamente.
+</p>
 
 </section>
+    <section style="padding:30px;">
+
+<h2 class="titulo">🔎 Buscar productos</h2>
+
+<div style="text-align:center;">
+
+<input 
+type="text" 
+id="buscador"
+placeholder="Busca tu producto..."
+style="
+padding:15px;
+width:80%;
+max-width:400px;
+border-radius:20px;
+border:1px solid #ccc;
+">
+
+</div>
+
+</section>
+
+
+
+<section style="padding:30px;">
+
+<h2 class="titulo">⭐ Opiniones de clientes</h2>
+
+
+<div class="contenedor-productos">
+
+
+<div class="producto">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Los jabones tienen un aroma muy agradable y dejan la piel suave."
+</p>
+
+</div>
+
+
+
+<div class="producto">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"El bálsamo hidrata muy bien y la presentación está bonita."
+</p>
+
+</div>
+
+
+
+<div class="producto">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Me gustaron mucho las sales de baño, volveré a comprar."
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section style="padding:30px;text-align:center;">
+
+<h2 class="titulo">
+🚚 Envíos
+</h2>
+
+<p>
+Realizamos envíos a todo Tlaxcala.
+</p>
+
+<p>
+📦 Pregunta por disponibilidad y costos de entrega.
+</p>
+
+</section>
+
+
 
 
 <footer id="contacto">
 
-<p>Envíos en todo Tlaxcala 🚚</p>
-<p>Pedidos por WhatsApp 📲</p>
+<h3>CR Artesanales 🌿</h3>
+
+<p>
+Productos artesanales para el cuidado personal.
+</p>
+
+<p>
+📲 WhatsApp: 220 500 36 22
+</p>
+
+
+<a class="boton"
+href="https://wa.me/522205003622"
+target="_blank">
+
+💬 Enviar mensaje
+
+</a>
+
 
 </footer>
 
 
-</body>
-</html>
+
+
+<script>
+
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("keyup", function(){
+
+let texto = buscador.value.toLowerCase();
+
+let productos = document.querySelectorAll(".producto");
+
+
+productos.forEach(function(producto){
+
+let contenido = producto.textContent.toLowerCase();
+
+
+if(contenido.includes(texto)){
+
+producto.style.display="block";
+
+}else{
+
+producto.style.display="none    
