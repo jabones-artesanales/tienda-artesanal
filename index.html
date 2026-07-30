@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CR Artesanales</title>
+<title>maestros cosmetiqueros</title>
 
 <style>
 
@@ -12,166 +13,191 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Arial',sans-serif;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#faf7f2;
+background:#f5f5f0;
 color:#333;
 }
 
 header{
-background:#6b4226;
+background:#2f6b3d;
 color:white;
-padding:30px;
-text-align:center;
+padding:20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
 
 header h1{
+text-align:center;
 font-size:38px;
 }
 
 header p{
-margin-top:10px;
+text-align:center;
+margin-top:8px;
 }
-
 
 nav{
-background:white;
 display:flex;
 justify-content:center;
-gap:20px;
-padding:15px;
-box-shadow:0 3px 10px #ddd;
-}
-
-nav a{
-text-decoration:none;
-color:#6b4226;
-font-weight:bold;
-}
-
-
-.hero{
-text-align:center;
-padding:45px 20px;
-}
-
-
-.hero h2{
-font-size:32px;
-color:#6b4226;
-}
-
-
-.hero p{
-margin-top:15px;
-font-size:18px;
-}
-
-
-.boton{
-display:inline-block;
-background:#6b4226;
-color:white;
-padding:14px 25px;
-border-radius:30px;
-text-decoration:none;
+gap:25px;
+flex-wrap:wrap;
 margin-top:20px;
 }
 
-
-.categorias{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-padding:20px;
-}
-
-
-.categoria{
-background:white;
-padding:20px;
-border-radius:20px;
-box-shadow:0 4px 10px #ddd;
+nav a{
+color:white;
+text-decoration:none;
 font-weight:bold;
+transition:.3s;
 }
 
-
-#productos{
-padding:30px;
+nav a:hover{
+color:#ffe48b;
 }
 
+.hero{
+background:linear-gradient(#dff5dd,#ffffff);
+padding:70px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:42px;
+color:#2f6b3d;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+max-width:800px;
+margin:auto;
+line-height:1.7;
+}
+
+.boton{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#2f6b3d;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
+
+.boton:hover{
+background:#245530;
+}
 
 .titulo{
 text-align:center;
-color:#6b4226;
-margin-bottom:25px;
+font-size:35px;
+color:#2f6b3d;
+margin:50px 0 30px;
 }
 
+.categorias{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:30px;
+}
 
-.contenedor-productos{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
+.card{
+background:white;
+border-radius:20px;
+padding:30px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-top:15px;
+color:#2f6b3d;
+}
+
+.productos{
+padding:20px 30px;
+}
+
+.grid-productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-
 .producto{
 background:white;
-width:280px;
-padding:20px;
 border-radius:20px;
-box-shadow:0 5px 15px #ddd;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
 text-align:center;
 }
-
 
 .producto img{
-width:150px;
-height:150px;
+width:180px;
+height:180px;
 object-fit:cover;
 border-radius:15px;
+margin-bottom:15px;
 }
-
-
-.producto h3{
-color:#6b4226;
-margin:15px;
-}
-
-
-.producto p{
-margin:8px;
-}
-
 
 .precio{
-font-size:20px;
+font-size:22px;
+color:#0d8f44;
 font-weight:bold;
-color:#198754;
+margin:15px 0;
 }
 
-
-.carrito{
-background:white;
-margin:30px;
-padding:20px;
+.mas-vendido{
+display:inline-block;
+background:#FFD700;
+color:#000;
+padding:6px 12px;
 border-radius:20px;
-box-shadow:0 5px 15px #ddd;
+font-size:14px;
+font-weight:bold;
+margin-bottom:12px;
 }
 
+.boton-comprar{
+display:inline-block;
+background:#2f6b3d;
+color:white;
+padding:12px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.boton-comprar:hover{
+background:#245530;
+}
 
 footer{
-background:#6b4226;
+margin-top:60px;
+background:#2f6b3d;
 color:white;
-padding:25px;
+padding:30px;
 text-align:center;
-margin-top:40px;
 }
-
 
 </style>
 
@@ -179,268 +205,288 @@ margin-top:40px;
 
 <body>
 
-
 <header>
 
-<h1>CR Artesanales 🌿</h1>
+<h1>🌿 CR Artesanales</h1>
 
-<p>Productos naturales para el cuidado personal</p>
-
-</header>
-
+<p>Productos artesanales para el cuidado de tu piel y cabello.</p>
 
 <nav>
 
-<a href="#">Inicio</a>
-
-<a href="#productos">Productos</a>
-
+<a href="#inicio">Inicio</a>
+<a href="#jabones">Jabones</a>
+<a href="#balsamos">Bálsamos</a>
+<a href="#shampoo">Champús</a>
+<a href="#sales">Sales de baño</a>
 <a href="#contacto">Contacto</a>
 
 </nav>
 
+</header>
 
-<section class="hero">
+<section class="hero" id="inicio">
 
-<h2>Cuida tu piel de forma natural</h2>
+<h2>Bienvenido a maestros cosmetologos</h2>
 
 <p>
-Jabones artesanales, bálsamos hidratantes,
-champú y sales de baño elaborados con ingredientes seleccionados.
+
+Descubre nuestros productos elaborados artesanalmente con ingredientes seleccionados para el cuidado de la piel y el cabello.
+
 </p>
 
+<a href="#jabones" class="boton">
 
-<a class="boton" href="#productos">
-Ver productos
+Ver Catálogo
+
 </a>
-
 
 </section>
 
+<h2 class="titulo">
 
+Nuestros Productos
+
+</h2>
 
 <section class="categorias">
 
-<div class="categoria">🧼 Jabones</div>
+<div class="card">
 
-<div class="categoria">🌿 Bálsamos</div>
+<h2>🧼</h2>
 
-<div class="categoria">🧴 Champú</div>
+<h3>Jabones Artesanales</h3>
 
-<div class="categoria">✨ Sales de baño</div>
-
-</section>
-    <section id="productos">
-
-<h2 class="titulo">Nuestros productos 🛒</h2>
-
-
-<div class="contenedor-productos">
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/150">
-
-<h3>🧼 Jabón Artesanal</h3>
-
-<p>
-Jabón natural elaborado artesanalmente para el cuidado diario de la piel.
-</p>
-
-<p>
-🌿 Ingredientes: aceites naturales, extractos vegetales y esencias.
-</p>
-
-<p>
-⚖️ Contenido: 100 g
-</p>
-
-<p class="precio">
-$50 MXN
-</p>
-
-<a class="boton" 
-href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20jabón%20artesanal">
-Comprar
-</a>
+<p>11 variedades disponibles.</p>
 
 </div>
 
+<div class="card">
 
+<h2>🌿</h2>
 
-<div class="producto">
+<h3>Bálsamos</h3>
 
-<img src="https://via.placeholder.com/150">
-
-<h3>🌿 Bálsamo Hidratante</h3>
-
-<p>
-Ayuda a mantener la piel suave e hidratada con una textura agradable.
-</p>
-
-<p>
-🌿 Ingredientes: mantecas naturales, aceites y activos hidratantes.
-</p>
-
-<p>
-⚖️ Contenido: 60 g
-</p>
-
-<p class="precio">
-$80 MXN
-</p>
-
-<a class="boton" 
-href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20bálsamo%20hidratante">
-Comprar
-</a>
+<p>Gel de Mentol y Ácido Hialurónico + Vitaminas.</p>
 
 </div>
 
+<div class="card">
 
+<h2>🧴</h2>
 
+<h3>Champús</h3>
 
-<div class="producto">
-
-<img src="https://via.placeholder.com/150">
-
-<h3>🧴 Champú Artesanal</h3>
-
-<p>
-Limpieza suave para cuidar tu cabello todos los días.
-</p>
-
-<p>
-🌿 Ingredientes: extractos naturales y componentes nutritivos.
-</p>
-
-<p>
-⚖️ Contenido: 250 ml
-</p>
-
-<p class="precio">
-$120 MXN
-</p>
-
-<a class="boton" 
-href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20un%20champú%20artesanal">
-Comprar
-</a>
+<p>Diferentes tipos para cada necesidad.</p>
 
 </div>
 
+<div class="card">
 
+<h2>✨</h2>
 
+<h3>Sales de Baño</h3>
 
-<div class="producto">
-
-<img src="https://via.placeholder.com/150">
-
-<h3>✨ Sales de Baño</h3>
-
-<p>
-Perfectas para un momento de relajación y cuidado personal.
-</p>
-
-<p>
-🌿 Ingredientes: sales minerales, aromas y extractos naturales.
-</p>
-
-<p>
-⚖️ Contenido: 500 g
-</p>
-
-<p class="precio">
-$100 MXN
-</p>
-
-<a class="boton" 
-href="https://wa.me/522205003622?text=Hola,%20quiero%20comprar%20sales%20de%20baño">
-Comprar
-</a>
-
-</div>
-
+<p>Rosa Mosqueta, Romero, Lavanda y Pirú.</p>
 
 </div>
 
 </section>
 
+    <section id="jabones" class="productos">
 
+<h2 class="titulo">🧼 Jabones Artesanales</h2>
 
-<section class="carrito">
+<div class="grid-productos">
 
-<h2 class="titulo">🛒 Carrito</h2>
-
-<p>
-Tu carrito aparecerá aquí próximamente.
-</p>
-
-</section>
-    <section style="padding:30px;">
-
-<h2 class="titulo">🔎 Buscar productos</h2>
-
-<div style="text-align:center;">
-
-<input 
-type="text" 
-id="buscador"
-placeholder="Busca tu producto..."
-style="
-padding:15px;
-width:80%;
-max-width:400px;
-border-radius:20px;
-border:1px solid #ccc;
-">
-
-</div>
-
-</section>
-
-
-
-<section style="padding:30px;">
-
-<h2 class="titulo">⭐ Opiniones de clientes</h2>
-
-
-<div class="contenedor-productos">
-
+<!-- Jabón de Avena -->
 
 <div class="producto">
 
-<h3>⭐⭐⭐⭐⭐</h3>
+<div class="mas-vendido">⭐ MÁS VENDIDO</div>
+
+<img src="imagenes/jabon de avena .jpg" alt="Jabón de Avena">
+
+<h3>Jabón de Avena</h3>
 
 <p>
-"Los jabones tienen un aroma muy agradable y dejan la piel suave."
+Ideal para la limpieza diaria de la piel.
 </p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de Avena',0)">
+🛒 Agregar al carrito
+</button>
 
 </div>
 
 
 
+<!-- Jabón de Azufre -->
+
 <div class="producto">
 
-<h3>⭐⭐⭐⭐⭐</h3>
+<div class="mas-vendido">⭐ MÁS VENDIDO</div>
+
+<img src="imagenes/jabon de azufre .jpg" alt="Jabón de Azufre">
+
+<h3>Jabón de Azufre</h3>
 
 <p>
-"El bálsamo hidrata muy bien y la presentación está bonita."
+Jabón artesanal elaborado con ingredientes seleccionados.
 </p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de Azufre',0)">
+🛒 Agregar al carrito
+</button>
 
 </div>
 
 
 
+<!-- Jabón de Coco -->
+
 <div class="producto">
 
-<h3>⭐⭐⭐⭐⭐</h3>
+<img src="imagenes/jabon de coco .jpg" alt="Jabón de Coco">
+
+<h3>Jabón de Coco</h3>
+
+<p>Jabón artesanal de coco.</p>
+
+<p><b>Contenido:</b>100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de Coco',0)">
+🛒 Agregar al carrito
+</button>
+
+</div>
+
+
+
+<!-- Jabón de Café -->
+
+<div class="producto">
+
+<img src="imagenes/jabon de cafe .jpg" alt="Jabón de Café">
+
+<h3>Jabón de Café</h3>
+
+<p>Jabón artesanal de café.</p>
+
+<p><b>Contenido:</b>100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de café',0)">
+🛒 Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- Jabón de sandia -->
+
+<div class="producto">
+
+<img src="imagenes/imagen jabon sandia .jpg" alt="Jabón de sandia">
+
+<h3>Jabón de Naranja</h3>
 
 <p>
-"Me gustaron mucho las sales de baño, volveré a comprar."
+Jabón artesanal con aroma cítrico y agradable.
 </p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de sandia',0)">
+🛒 Agregar al carrito
+</button>
+
+</div>
+
+
+
+<!-- Jabón de limon -->
+
+<div class="producto">
+
+<img src="imagenes/limon jabon foto .jpg" alt="limon">
+
+<h3>Jabón de Neem</h3>
+
+<p>
+Jabón artesanal elaborado con extractos naturales.
+</p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de limon',0)">
+🛒 Agregar al carrito
+</button>
+
+</div>
+
+
+
+<!-- Jabón de coco -->
+
+<div class="producto">
+
+<img src="imagenes/jabon de coco .jpg" alt="Jabón de coco">
+
+<h3>Jabón de coco</h3>
+
+<p>
+Jabón artesanal para el cuidado de la piel.
+</p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de coco',0)">
+🛒 Agregar al carrito
+</button>
+
+</div>
+
+
+
+<!-- Jabón de maracuya -->
+
+<div class="producto">
+
+<img src="imagenes/jabon de maracuya .jpg" alt="Jabón de maracuya">
+
+<h3>Jabón de maracuya</h3>
+
+<p>
+Jabón artesanal con esencia floral y natural.
+</p>
+
+<p><b>Contenido:</b> 100 g</p>
+
+<p class="precio">$50.00 MXN</p>
+
+<button class="boton-comprar" onclick="agregarCarrito('Jabón de maracuya',0)">
+🛒 Agregar al carrito
+</button>
 
 </div>
 
@@ -448,76 +494,3 @@ border:1px solid #ccc;
 </div>
 
 </section>
-
-
-
-
-<section style="padding:30px;text-align:center;">
-
-<h2 class="titulo">
-🚚 Envíos
-</h2>
-
-<p>
-Realizamos envíos a todo Tlaxcala.
-</p>
-
-<p>
-📦 Pregunta por disponibilidad y costos de entrega.
-</p>
-
-</section>
-
-
-
-
-<footer id="contacto">
-
-<h3>CR Artesanales 🌿</h3>
-
-<p>
-Productos artesanales para el cuidado personal.
-</p>
-
-<p>
-📲 WhatsApp: 220 500 36 22
-</p>
-
-
-<a class="boton"
-href="https://wa.me/522205003622"
-target="_blank">
-
-💬 Enviar mensaje
-
-</a>
-
-
-</footer>
-
-
-
-
-<script>
-
-const buscador = document.getElementById("buscador");
-
-buscador.addEventListener("keyup", function(){
-
-let texto = buscador.value.toLowerCase();
-
-let productos = document.querySelectorAll(".producto");
-
-
-productos.forEach(function(producto){
-
-let contenido = producto.textContent.toLowerCase();
-
-
-if(contenido.includes(texto)){
-
-producto.style.display="block";
-
-}else{
-
-producto.style.display="none    
