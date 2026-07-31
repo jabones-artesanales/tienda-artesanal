@@ -1,205 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>maestros cosmetiqueros</title>
+<title>Tienda Artesanal</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#f5f5f0;
-color:#333;
-}
-
-header{
-background:#2f6b3d;
-color:white;
-padding:20px;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-
-header h1{
-text-align:center;
-font-size:38px;
-}
-
-header p{
-text-align:center;
-margin-top:8px;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffe48b;
-}
-
-.hero{
-background:linear-gradient(#dff5dd,#ffffff);
-padding:70px 20px;
-text-align:center;
-}
-
-.hero h2{
-font-size:42px;
-color:#2f6b3d;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-max-width:800px;
-margin:auto;
-line-height:1.7;
-}
-
-.boton{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:#2f6b3d;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:.3s;
-}
-
-.boton:hover{
-background:#245530;
-}
-
-.titulo{
-text-align:center;
-font-size:35px;
-color:#2f6b3d;
-margin:50px 0 30px;
-}
-
-.categorias{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:30px;
-}
-
-.card{
-background:white;
-border-radius:20px;
-padding:30px;
-text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-transition:.3s;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
-margin-top:15px;
-color:#2f6b3d;
-}
-
-.productos{
-padding:20px 30px;
-}
-
-.grid-productos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.producto{
-background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-text-align:center;
-}
-
-.producto img{
-width:180px;
-height:180px;
-object-fit:cover;
-border-radius:15px;
-margin-bottom:15px;
-}
-
-.precio{
-font-size:22px;
-color:#0d8f44;
-font-weight:bold;
-margin:15px 0;
-}
-
-.mas-vendido{
-display:inline-block;
-background:#FFD700;
-color:#000;
-padding:6px 12px;
-border-radius:20px;
-font-size:14px;
-font-weight:bold;
-margin-bottom:12px;
-}
-
-.boton-comprar{
-display:inline-block;
-background:#2f6b3d;
-color:white;
-padding:12px 20px;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-margin-top:15px;
-}
-
-.boton-comprar:hover{
-background:#245530;
-}
-
-footer{
-margin-top:60px;
-background:#2f6b3d;
-color:white;
-padding:30px;
-text-align:center;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -207,290 +14,252 @@ text-align:center;
 
 <header>
 
-<h1>🌿 CR Artesanales</h1>
+<h1>🌿 Tienda Artesanal</h1>
 
-<p>Productos artesanales para el cuidado de tu piel y cabello.</p>
+<p>Productos naturales para tu cuidado</p>
 
-<nav>
-
-<a href="#inicio">Inicio</a>
-<a href="#jabones">Jabones</a>
-<a href="#balsamos">Bálsamos</a>
-<a href="#shampoo">Shampoos</a>
-<a href="#sales">Sales de baño</a>
-<a href="#contacto">Contacto</a>
-
-</nav>
+<input type="text" id="buscador" placeholder="Buscar producto...">
 
 </header>
 
-<section class="hero" id="inicio">
 
-<h2>Bienvenido a maestros cosmetologos</h2>
+<nav>
+<a href="#jabones">Jabones</a>
+<a href="#shampoo">Champús</a>
+<a href="#sales">Sales de baño</a>
+</nav>
 
-<p>
 
-Descubre nuestros productos elaborados artesanalmente con ingredientes seleccionados para el cuidado de la piel y el cabello.
+<h2 id="jabones">🧼 Jabones artesanales</h2>
 
-</p>
+<section class="productos">
 
-<a href="#jabones" class="boton">
 
-Ver Catálogo
+<div class="producto">
+<img src="imagenes/jabon-avena.jpg">
 
+<h3>Jabón de avena</h3>
+
+<p>Suave y nutritivo para la piel.</p>
+
+<button onclick="agregarCarrito('Jabón de avena')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<img src="imagenes/jabon-azufre.jpg">
+
+<h3>Jabón de azufre</h3>
+
+<p>Limpieza profunda para la piel.</p>
+
+<button onclick="agregarCarrito('Jabón de azufre')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+</section>
+
+
+<h2 id="shampoo">🧴 Champús artesanales</h2>
+
+
+<section class="productos">
+
+
+<div class="producto">
+
+<img src="imagenes/shampoo-anticaida.jpg">
+
+<h3>Champú anticaída</h3>
+
+<p>Ayuda al cuidado y fortalecimiento del cabello.</p>
+
+<button onclick="agregarCarrito('Champú anticaída')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<img src="imagenes/shampoo-limpieza.jpg">
+
+<h3>Champú limpieza profunda</h3>
+
+<p>Limpieza refrescante para el cabello.</p>
+
+<button onclick="agregarCarrito('Champú limpieza profunda')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+</section>
+
+    <h2 id="sales">🛁 Sales de baño</h2>
+
+<section class="productos">
+
+
+<div class="producto">
+
+<img src="imagenes/sales-lavanda.jpg">
+
+<h3>Sales de lavanda</h3>
+
+<p>Relajación y aroma natural para tu baño.</p>
+
+<button onclick="agregarCarrito('Sales de lavanda')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<img src="imagenes/sales-romero.jpg">
+
+<h3>Sales de romero</h3>
+
+<p>Aroma fresco y sensación revitalizante.</p>
+
+<button onclick="agregarCarrito('Sales de romero')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<img src="imagenes/sales-piru.jpg">
+
+<h3>Sales de pirú</h3>
+
+<p>Producto artesanal con esencia natural.</p>
+
+<button onclick="agregarCarrito('Sales de pirú')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<img src="imagenes/sales-rosa-mosqueta.jpg">
+
+<h3>Sales de rosa mosqueta</h3>
+
+<p>Cuidado y suavidad para tu piel.</p>
+
+<button onclick="agregarCarrito('Sales de rosa mosqueta')">
+Agregar al carrito
+</button>
+
+</div>
+
+
+</section>
+
+
+<h2>🛒 Carrito</h2>
+
+<div id="carrito">
+<p>No hay productos agregados.</p>
+</div>
+
+
+<a class="whatsapp" href="https://wa.me/522205003622" target="_blank">
+💬
 </a>
 
-</section>
 
-<h2 class="titulo">
+<script>
 
-Nuestros Productos
+let productos = [];
 
-</h2>
 
-<section class="categorias">
+function agregarCarrito(producto){
 
-<div class="card">
+productos.push(producto);
 
-<h2>🧼</h2>
+mostrarCarrito();
 
-<h3>Jabones Artesanales</h3>
+}
 
-<p>11 variedades disponibles.</p>
 
-</div>
 
-<div class="card">
+function mostrarCarrito(){
 
-<h2>🌿</h2>
+let caja = document.getElementById("carrito");
 
-<h3>Bálsamos</h3>
 
-<p>Gel de Mentol y Ácido Hialurónico + Vitaminas.</p>
+if(productos.length === 0){
 
-</div>
+caja.innerHTML = "No hay productos agregados.";
 
-<div class="card">
+}
 
-<h2>🧴</h2>
+else{
 
-<h3>shampoo</h3>
+caja.innerHTML = productos.join("<br>");
 
-<p>Diferentes tipos para cada necesidad.</p>
+}
 
-</div>
+}
 
-<div class="card">
 
-<h2>✨</h2>
 
-<h3>Sales de Baño</h3>
+document.getElementById("buscador").addEventListener("keyup", function(){
 
-<p>Rosa Mosqueta, Romero, Lavanda y Pirú.</p>
+let texto = this.value.toLowerCase();
 
-</div>
 
-</section>
+let tarjetas = document.querySelectorAll(".producto");
 
-    <section id="jabones" class="productos">
 
-<h2 class="titulo">🧼 Jabones Artesanales</h2>
+tarjetas.forEach(function(tarjeta){
 
-<div class="grid-productos">
+let contenido = tarjeta.innerText.toLowerCase();
 
-<!-- Jabón de Avena -->
 
-<div class="producto">
+if(contenido.includes(texto)){
 
-<div class="mas-vendido">⭐ MÁS VENDIDO</div>
+tarjeta.style.display="block";
 
-<img src="./imagenes/jabon-de-avena.jfif" alt="Jabón de Avena">
+}
 
-<h3>Jabón de Avena</h3>
+else{
 
-<p>
-Ideal para la limpieza diaria de la piel.
-</p>
+tarjeta.style.display="none";
 
-<p><b>Contenido:</b> 100 g</p>
+}
 
-<p class="precio">$50.00 MXN</p>
+});
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Avena',0)">
-🛒 Agregar al carrito
-</button>
 
-</div>
+});
 
 
+</script>
 
-<!-- Jabón de Azufre -->
 
-<div class="producto">
+</body>
 
-<div class="mas-vendido">⭐ MÁS VENDIDO</div>
-
-<img src="./imagenes/jabon-de-azufre.jfif" alt="Jabón de Azufre">
-
-<h3>Jabón de Azufre</h3>
-
-<p>
-Jabón artesanal elaborado con ingredientes seleccionados.
-</p>
-
-<p><b>Contenido:</b> 100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Azufre',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Jabón de Coco -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-de-coco.jfif" alt="Jabón de Coco">
-
-<h3>Jabón de Coco</h3>
-
-<p>Jabón artesanal de coco.</p>
-
-<p><b>Contenido:</b>100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Coco',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Jabón de Café -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-cafe.jfif" alt="Jabón de Café">
-
-<h3>Jabón de Café</h3>
-
-<p>Jabón artesanal de café.</p>
-
-<p><b>Contenido:</b>100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de café',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-    <!-- Jabón de sandia -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-sandia.jfif" alt="Jabón de Sandia">
-
-<h3>Jabón de Sandia</h3>
-
-<p>
-Jabón artesanal con aroma cítrico y agradable.
-</p>
-
-<p><b>Contenido:</b> 100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de sandia',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Jabón de limon -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-limon.jfif" alt="limon">
-
-<h3>Jabón de limon</h3>
-
-<p>
-Jabón artesanal elaborado con extractos naturales.
-</p>
-
-<p><b>Contenido:</b> 100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de limon',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Jabón de aloe -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-de-aloe.jfif" alt="Jabón de aloe">
-
-<h3>Jabón de aloe</h3>
-
-<p>
-Jabón artesanal para el cuidado de la piel.
-</p>
-
-<p><b>Contenido:</b> 100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de aloe,0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Jabón de maracuya -->
-
-<div class="producto">
-
-<img src="./imagenes/jabon-de-maracuya.jfif" alt="Jabón de maracuya">
-
-<h3>Jabón de maracuya</h3>
-
-<p>
-Jabón artesanal con esencia floral y natural.
-</p>
-
-<p><b>Contenido:</b> 100 g</p>
-
-<p class="precio">$50.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de maracuya',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</section>
+</html>
