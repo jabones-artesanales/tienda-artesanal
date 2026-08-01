@@ -197,6 +197,37 @@ background:#2f6b3d;
 color:white;
 padding:30px;
 text-align:center;
+
+  /* BUSCADOR */
+
+#buscador{
+
+width:100%;
+max-width:450px;
+
+padding:14px 20px;
+
+margin:25px auto;
+
+display:block;
+
+border:2px solid #2f6b3d;
+
+border-radius:30px;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+#buscador:focus{
+
+box-shadow:0 0 10px rgba(47,107,61,.35);
+
+}
 }
 
 </style>
@@ -248,6 +279,12 @@ Nuestros Productos
 
 </h2>
 
+  <input
+type="text"
+id="buscador"
+placeholder="🔍 Buscar productos..."
+onkeyup="buscarProductos()">
+  
 <section class="categorias">
 
 <div class="card">
@@ -730,3 +767,44 @@ Bálsamo refrescante artesanal para sensación de alivio y frescura.
 </div>
 
 </section>
+
+  <footer id="contacto">
+
+<p>© 2026 CR Artesanales</p>
+
+<p>📞 Teléfono: 220 500 36 22</p>
+
+<p>💬 WhatsApp: 220 500 36 22</p>
+
+</footer>
+
+<script>
+
+function buscarProductos(){
+
+let texto=document.getElementById("buscador").value.toLowerCase();
+
+let productos=document.querySelectorAll(".producto");
+
+productos.forEach(function(producto){
+
+let contenido=producto.textContent.toLowerCase();
+
+if(contenido.includes(texto)){
+
+producto.style.display="";
+
+}else{
+
+producto.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
