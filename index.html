@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -185,10 +184,96 @@ border-radius:25px;
 text-decoration:none;
 font-weight:bold;
 margin-top:15px;
+border:none;
+cursor:pointer;
 }
 
 .boton-comprar:hover{
 background:#245530;
+}
+/* ===== CARRITO ===== */
+
+#carrito-icono{
+position:fixed;
+top:20px;
+right:20px;
+background:#2f6b3d;
+color:#fff;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:2000;
+}
+
+#contador{
+position:absolute;
+top:-6px;
+right:-6px;
+background:red;
+color:white;
+width:22px;
+height:22px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:12px;
+font-weight:bold;
+}
+
+#carrito{
+position:fixed;
+right:-400px;
+top:0;
+width:350px;
+height:100%;
+background:white;
+box-shadow:-5px 0 15px rgba(0,0,0,.3);
+padding:20px;
+transition:.4s;
+overflow:auto;
+z-index:3000;
+}
+
+#carrito.activo{
+right:0;
+}
+
+#lista-carrito{
+margin:20px 0;
+}
+
+.total{
+font-size:22px;
+font-weight:bold;
+color:#2f6b3d;
+margin:20px 0;
+}
+
+/* ===== WHATSAPP ===== */
+
+#whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+text-decoration:none;
+color:white;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:2500;
 }
 
 footer{
@@ -197,149 +282,145 @@ background:#2f6b3d;
 color:white;
 padding:30px;
 text-align:center;
-
-  /* BUSCADOR */
+}
 
 #buscador{
-
 width:100%;
 max-width:450px;
-
 padding:14px 20px;
-
 margin:25px auto;
-
 display:block;
-
 border:2px solid #2f6b3d;
-
 border-radius:30px;
-
 font-size:16px;
-
 outline:none;
-
-transition:.3s;
-
-}
-
-#buscador:focus{
-
-box-shadow:0 0 10px rgba(47,107,61,.35);
-
-}
 }
 
 </style>
-
 </head>
 
 <body>
+
+<div id="carrito-icono" onclick="abrirCarrito()">
+🛒
+<span id="contador">0</span>
+</div>
+
+<div id="carrito">
+<h2>🛒 Mi carrito</h2>
+
+<div id="lista-carrito"></div>
+
+<p class="total">
+Total: $<span id="total">0</span>
+</p>
+
+<button class="boton-comprar"
+onclick="enviarWhatsApp()">
+Finalizar pedido
+</button>
+
+<br><br>
+
+<button class="boton-comprar"
+onclick="cerrarCarrito()">
+Cerrar
+</button>
+
+</div>
+
+<a
+id="whatsapp"
+href="https://wa.me/522205003622"
+target="_blank">
+💬
+</a>
 
 <header>
 
 <h1>🌿 CR Artesanales</h1>
 
-<p>Productos artesanales para el cuidado de tu piel y cabello.</p>
+<p>
+Productos artesanales para el cuidado de tu piel y cabello.
+</p>
 
 <nav>
 
 <a href="#inicio">Inicio</a>
 <a href="#jabones">Jabones</a>
-<a href="#ungüentos">ungüentos</a>
-<a href="#shampoo">shampoo</a>
+<a href="#unguentos">Bálsamos</a>
+<a href="#shampoo">Shampoo</a>
 <a href="#sales">Sales de baño</a>
 <a href="#contacto">Contacto</a>
 
 </nav>
 
 </header>
-
 <section class="hero" id="inicio">
 
 <h2>Bienvenido a CR Artesanales</h2>
 
 <p>
-
 Descubre nuestros productos elaborados artesanalmente con ingredientes seleccionados para el cuidado de la piel y el cabello.
-
 </p>
 
 <a href="#jabones" class="boton">
-
 Ver Catálogo
-
 </a>
 
 </section>
 
 <h2 class="titulo">
-
 Nuestros Productos
-
 </h2>
 
-  <input
+<input
 type="text"
 id="buscador"
 placeholder="🔍 Buscar productos..."
 onkeyup="buscarProductos()">
-  
+
 <section class="categorias">
 
 <div class="card">
-
 <h2>🧼</h2>
-
 <h3>Jabones Artesanales</h3>
-
 <p>8 variedades disponibles.</p>
-
 </div>
 
 <div class="card">
-
 <h2>🌿</h2>
-
-<h3>ungüentos</h3>
-
-<p>Gel de Mentol y Ácido Hialurónico + Vitaminas.</p>
-
+<h3>Bálsamos</h3>
+<p>Gel de Mentol y Bálsamo Hidratante.</p>
 </div>
 
 <div class="card">
-
 <h2>🧴</h2>
-
-<h3>shampoos</h3>
-
-<p>Diferentes tipos para cada necesidad.</p>
-
+<h3>Shampoo</h3>
+<p>250 ml para diferentes necesidades.</p>
 </div>
 
 <div class="card">
-
 <h2>✨</h2>
-
 <h3>Sales de Baño</h3>
-
 <p>Rosa Mosqueta, Romero, Lavanda y Pirú.</p>
-
 </div>
 
 </section>
 
 <section id="jabones" class="productos">
 
-<h2 class="titulo">🧼 Jabones Artesanales</h2>
+<h2 class="titulo">
+🧼 Jabones Artesanales
+</h2>
 
 <div class="grid-productos">
 
-<!-- Jabón de Avena -->
-
 <div class="producto">
 
-<div class="mas-vendido">⭐ MÁS VENDIDO</div>
+<div class="mas-vendido">
+⭐ MÁS VENDIDO
+</div>
 
 <img src="imagenes/jabon-de-avena.jfif" alt="Jabón de Avena">
 
@@ -353,19 +434,19 @@ Ideal para la limpieza diaria de la piel.
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Avena',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Avena',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
-
-<!-- Jabón de Azufre -->
-
 <div class="producto">
 
-<div class="mas-vendido">⭐ MÁS VENDIDO</div>
+<div class="mas-vendido">
+⭐ MÁS VENDIDO
+</div>
 
 <img src="imagenes/jabon-de-azufre.jfif" alt="Jabón de Azufre">
 
@@ -375,19 +456,17 @@ Ideal para la limpieza diaria de la piel.
 Jabón artesanal elaborado con ingredientes seleccionados.
 </p>
 
-<p><b>Contenido:</b> 100 g</p>
+<p><b>Contenido:</b>100 g</p>
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Azufre',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Azufre',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
-
-
-
-<!-- Jabón de Coco -->
 
 <div class="producto">
 
@@ -401,15 +480,13 @@ Jabón artesanal elaborado con ingredientes seleccionados.
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Coco',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Coco',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
-
-
-
-<!-- Jabón de Café -->
 
 <div class="producto">
 
@@ -423,371 +500,371 @@ Jabón artesanal elaborado con ingredientes seleccionados.
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de Café',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Café',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
-
-</div>
-
-</section>
-
-<!-- Jabón de limon -->
-
 <div class="producto">
 
-<img src="imagenes/jabon-limon.jfif" alt="Jabón de limon">
+<img src="imagenes/jabon-limon.jfif" alt="Jabón de Limón">
 
-<h3>Jabón de limon</h3>
+<h3>Jabón de Limón</h3>
 
 <p>
 Jabón artesanal con aroma cítrico y agradable.
 </p>
 
-<p><b>Contenido:</b> 100 g</p>
+<p><b>Contenido:</b>100 g</p>
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de limon',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Limón',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
-
-<!-- Jabón de aloe -->
-
 <div class="producto">
 
-<img src="imagenes/jabon-de-aloe.jfif" alt="Jabón de aloe">
+<img src="imagenes/jabon-de-aloe.jfif" alt="Jabón de Aloe">
 
-<h3>Jabón de aloe</h3>
+<h3>Jabón de Aloe</h3>
 
 <p>
 Jabón artesanal elaborado con extractos naturales.
 </p>
 
-<p><b>Contenido:</b> 100 g</p>
+<p><b>Contenido:</b>100 g</p>
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de aloe',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Aloe',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
-
-<!-- Jabón de sandia -->
-
 <div class="producto">
 
-<img src="imagenes/jabon-sandia.jfif" alt="Jabón de sandia">
+<img src="imagenes/jabon-sandia.jfif" alt="Jabón de Sandía">
 
-<h3>Jabón de sandia</h3>
+<h3>Jabón de Sandía</h3>
 
 <p>
 Jabón artesanal para el cuidado de la piel.
 </p>
 
-<p><b>Contenido:</b> 100 g</p>
+<p><b>Contenido:</b>100 g</p>
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de sandia',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Sandía',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
-
-<!-- Jabón de maracuya -->
-
 <div class="producto">
 
-<img src="imagenes/jabon-de-maracuya.jfif" alt="Jabón de maracuya">
+<img src="imagenes/jabon-de-maracuya.jfif" alt="Jabón de Maracuyá">
 
-<h3>Jabón de maracuya</h3>
+<h3>Jabón de Maracuyá</h3>
 
 <p>
-Jabón artesanal con esencia  natural.
+Jabón artesanal con esencia natural.
 </p>
 
-<p><b>Contenido:</b> 100 g</p>
+<p><b>Contenido:</b>100 g</p>
 
 <p class="precio">$50.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('Jabón de maracuya',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Jabón de Maracuyá',50)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
 </div>
 
 </section>
 
-  <!-- SECCIÓN shampoos -->
+<!-- SHAMPOO -->
 
-<h2 class="titulo" id="shampoo">
-🧴 shampoo Artesanales
+<section id="shampoo" class="productos">
+
+<h2 class="titulo">
+🧴 Shampoo Artesanal
 </h2>
-
-
-<section class="productos">
 
 <div class="grid-productos">
 
-
-<!-- shampoo Anticaída -->
-
 <div class="producto">
 
-<img src="imagenes/shampoo-xd.jfif" alt="shampoo Anticaída">
+<img src="imagenes/shampoo-xd.jfif" alt="Shampoo Anticaída">
 
-<h3>shampoo Anticaída</h3>
+<h3>Shampoo Anticaída</h3>
 
 <p>
-shampoo artesanal elaborado para el cuidado y fortalecimiento del cabello.
+Ayuda al fortalecimiento del cabello.
 </p>
 
-<p><b>Contenido:</b> 250 ml</p>
+<p><b>Contenido:</b>250 ml</p>
 
 <p class="precio">$120.00 MXN</p>
 
-<button class="boton-comprar" onclick="agregarCarrito('shampoo Anticaída',0)">
+<button
+class="boton-comprar"
+onclick="agregarCarrito('Shampoo Anticaída',120)">
 🛒 Agregar al carrito
 </button>
 
 </div>
 
-
-
-<!-- shampoo Limpieza Profunda -->
-
 <div class="producto">
 
-<img src="imagenes/shampoodelimpiezaprofunda.jfif" alt="shampoo Limpieza Profunda">
+<img src="imagenes/shampoodelimpiezaprofunda.jfif"
+alt="Shampoo Limpieza Profunda">
 
-<h3>shampoo Limpieza Profunda</h3>
+<h3>Shampoo Limpieza Profunda</h3>
 
 <p>
-shampoo artesanal para una limpieza profunda y sensación refrescante.
-</p>
+  <!-- CONTACTO -->
 
-<p><b>Contenido:</b> 250 ml</p>
+<section id="contacto" class="productos">
 
-<p class="precio">$120.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('shampoo Limpieza Profunda',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-  <!-- SECCIÓN SALES DE BAÑO -->
-
-<h2 class="titulo" id="sales">
-✨ Sales de Baño Artesanales
+<h2 class="titulo">
+📞 Contacto
 </h2>
 
+<div class="card">
 
-<section class="productos">
-
-<div class="grid-productos">
-
-
-<!-- Sales de Rosa Mosqueta -->
-
-<div class="producto">
-
-<img src="imagenes/salderosamosqueta.jfif" alt="Sales de Rosa Mosqueta">
-
-<h3>Sales de Rosa Mosqueta</h3>
+<h3>CR Artesanales</h3>
 
 <p>
-Sales artesanales con aroma suave para una experiencia relajante.
+¿Tienes dudas o quieres hacer un pedido personalizado?
 </p>
 
-<p><b>Contenido:</b> 200 g</p>
-
-<p class="precio">$120.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Sales de Rosa Mosqueta',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Sales de Romero -->
-
-<div class="producto">
-
-<img src="imagenes/salderomero.jfif" alt="Sales de Romero">
-
-<h3>Sales de Romero</h3>
+<br>
 
 <p>
-Sales artesanales con esencia natural de romero.
+📍 Envíos disponibles en Tlaxcala
 </p>
-
-<p><b>Contenido:</b> 250 g</p>
-
-<p class="precio">$120.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Sales de Romero',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-
-<!-- Sales de Lavanda -->
-
-<div class="producto">
-
-<img src="imagenes/salelavanda.jfif" alt="Sales de Lavanda">
-
-<h3>Sales de Lavanda</h3>
 
 <p>
-Aroma relajante y sensación de bienestar.
+📲 WhatsApp: 220 500 3622
 </p>
 
-<p><b>Contenido:</b> 200 g</p>
+<br>
 
-<p class="precio">$120.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Sales de Lavanda',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-
-<!-- Sales de Pirú -->
-
-<div class="producto">
-
-<img src="imagenes/salderuda.jfif" alt="Sales de Pirú">
-
-<h3>Sales de Pirú</h3>
-
-<p>
-Producto artesanal elaborado con ingredientes naturales.
-</p>
-
-<p><b>Contenido:</b> 250 g</p>
-
-<p class="precio">$120.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Sales de Pirú',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
+<a 
+class="boton"
+href="https://wa.me/522205003622"
+target="_blank">
+Enviar mensaje
+</a>
 
 </div>
 
 </section>
 
-<!-- SECCIÓN UNGÜENTOS / BÁLSAMOS -->
 
-<h2 class="titulo" id="ungüentos">
-🌿 Ungüentos Artesanales
-</h2>
+<footer>
 
-<section class="productos">
-
-<div class="grid-productos">
-
-<!-- Gel de Mentol -->
-
-<div class="producto">
-
-<img src="imagenes/geldementol.jfif" alt="Gel de Mentol">
-
-<h3>Gel de Mentol</h3>
+<h3>🌿 CR Artesanales</h3>
 
 <p>
-Bálsamo refrescante artesanal para sensación de alivio y frescura.
+Productos artesanales para el cuidado de tu piel y cabello.
 </p>
 
-<p><b>Contenido:</b> 60 g</p>
-
-<p class="precio">$100.00 MXN</p>
-
-<button class="boton-comprar" onclick="agregarCarrito('Gel de Mentol',0)">
-🛒 Agregar al carrito
-</button>
-
-</div>
-
-<div class="producto">
-
-  <img src="imagenes/balsamohidratante.jfif" alt="Bálsamo Hidratante">
-
-  <h3>Bálsamo Hidratante</h3>
-
-  <p>
-    Bálsamo artesanal con ácido hialurónico y vitaminas para el cuidado de la piel.
-  </p>
-
-  <p><b>Contenido:</b> 60 g</p>
-
-  <p class="precio">$100.00 MXN</p>
-
-  <button class="boton-comprar" onclick="agregarCarrito('Bálsamo Hidratante',0)">
-    🛒 Agregar al carrito
-  </button>
-
-</div>
-
-</div>
-
-</section>
-
-  <footer id="contacto">
-
-<p>© 2026 CR Artesanales</p>
-
-<p>📞 Teléfono: 220 500 36 22</p>
-
-<p>💬 WhatsApp: 220 500 36 22</p>
+<p>
+© 2026 Todos los derechos reservados.
+</p>
 
 </footer>
 
+
+
 <script>
+
+let carrito=[];
+
+
+function abrirCarrito(){
+
+document.getElementById("carrito")
+.classList.add("activo");
+
+}
+
+
+function cerrarCarrito(){
+
+document.getElementById("carrito")
+.classList.remove("activo");
+
+}
+
+
+
+function agregarCarrito(nombre,precio){
+
+carrito.push({
+
+nombre:nombre,
+precio:precio
+
+});
+
+
+actualizarCarrito();
+
+}
+
+
+
+function actualizarCarrito(){
+
+let lista=document.getElementById("lista-carrito");
+
+lista.innerHTML="";
+
+let total=0;
+
+
+carrito.forEach((producto,index)=>{
+
+
+lista.innerHTML+=`
+
+<p>
+${producto.nombre}
+<br>
+$${producto.precio}
+<button onclick="eliminarProducto(${index})">
+❌
+</button>
+</p>
+
+<hr>
+
+`;
+
+
+total+=producto.precio;
+
+
+});
+
+
+document.getElementById("total")
+.innerHTML=total;
+
+
+document.getElementById("contador")
+.innerHTML=carrito.length;
+
+
+}
+
+
+
+function eliminarProducto(index){
+
+carrito.splice(index,1);
+
+actualizarCarrito();
+
+}
+
+
+
+function enviarWhatsApp(){
+
+
+let mensaje="Hola CR Artesanales, quiero hacer un pedido:%0A%0A";
+
+
+carrito.forEach(producto=>{
+
+mensaje+=
+"- "+producto.nombre+
+" $"+producto.precio+
+"%0A";
+
+});
+
+
+mensaje+=
+"%0ATotal: $"+
+document.getElementById("total").innerHTML;
+
+
+window.open(
+"https://wa.me/522205003622?text="+mensaje,
+"_blank"
+);
+
+
+}
+
+
 
 function buscarProductos(){
 
-let texto=document.getElementById("buscador").value.toLowerCase();
 
-let productos=document.querySelectorAll(".producto");
+let texto=
+document.getElementById("buscador")
+.value
+.toLowerCase();
 
-productos.forEach(function(producto){
 
-let contenido=producto.textContent.toLowerCase();
+let productos=
+document.querySelectorAll(".producto");
+
+
+productos.forEach(producto=>{
+
+
+let contenido=
+producto.innerText
+.toLowerCase();
+
 
 if(contenido.includes(texto)){
 
-producto.style.display="";
+
+producto.style.display="block";
+
 
 }else{
 
+
 producto.style.display="none";
-  
+
+
+}
+
+
+});
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
